@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Backend API",
   "scripts": {
-    "start:dev": "nodemon --ignore dist/ --ignore test/ --exec babel-node ./src/bin/www.js"
+    "start:dev": "nodemon --ignore dist/ --ignore test/ --exec babel-node ./src/bin/www.js",
+    "test": "cross-env NODE_ENV=test mocha 'test/**/*.test.js' --require @babel/register --exit"
   },
   "dependencies": {
     "@sentry/node": "^6.7.2",
@@ -35,13 +36,17 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "cross-env": "^7.0.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-import-resolver-babel-module": "^5.1.2",
     "eslint-plugin-import": "^2.20.2",
+    "jest": "^29.7.0",
     "mocha": "^10.7.3",
     "nodemon": "^2.0.3",
-    "sequelize-cli": "^6.4.1"
+    "redis-mock": "^0.56.3",
+    "sequelize-cli": "^6.4.1",
+    "supertest": "^7.0.0"
   },
   "engines": {
     "node": "16",
